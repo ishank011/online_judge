@@ -1,0 +1,47 @@
+Divyam is a very naughty boy. One day he was caught talking in class. The teacher asks him to go out of the class. Divyam, being a confident boy, asks the teacher to give him a problem to solve and agrees that he will happily go out of the class if he is unable to solve the problem. The teacher reluctantly accepts the challenge knowing very well that Divyam will be able to solve the problem. The teacher thought that this will alteast keep Divyam quiet for a while.
+
+The question given by the teacher was as follows. Given the sequence
+
+F(1)=1
+F(2)=1
+F(3)=1
+
+F(2N)=F(2N-1)+F(2N-2)+F(2N-3) N>1 
+F(2N+1)=F(2N)+F(2N-1) N>1
+Predict the Nth number of the sequence.
+Divyam was bamoboozled by the question and was unable to solve it. He appoached Bharat, knowing very well that if Bharat is unable to solve the question then the question is probabaly wrong. Since Bharat is busy cracking the P=NP problem, can you solve this trivial problem on his behalf for Divyam?.
+As the values can be quite large print them modulo 10^9+7
+
+Input Format
+
+The first line of input is T,The number of test cases.
+Each of the next T lines contain one number ,The value of N.
+
+Constraints:
+
+1 ≤ N ≤ 100000
+1 ≤ T ≤ 1000000000 
+
+Output Format
+
+For each N, print F(N) new line.
+
+Sample Input
+
+4
+1
+2
+3
+4
+
+Sample Output
+
+1
+1
+1
+3
+
+Explanation
+
+The first three are defined.
+F(4)=F(1)+F(2)+F(3)

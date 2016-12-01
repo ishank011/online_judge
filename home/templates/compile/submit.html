@@ -1,0 +1,28 @@
+<h1> Question Name</h1>
+
+{% if messages %}
+<div class="span12">
+{% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">
+        {{ message|safe }}
+    </div>
+{% endfor %}
+</div>
+{% endif %}
+
+<br>
+
+<form action="/compile/submit" method="POST" enctype="multipart/form-data">
+	{% csrf_token %}
+	<select name="language">
+		<option value="c">C</option>
+		<option value="cpp">C++</option>
+		<option value="java">Java</option>
+		<option value="python">Python</option>
+	</select>
+	<br />
+	<input type="file" name="file">
+	<textarea id="code" type="text" maxlength="100000000000" name="code" cols="10" rows="5000000" style="width:200px; height:50px;"></textarea>
+	<br />
+	<input id="submit" value="submit" type="submit" >
+</form>

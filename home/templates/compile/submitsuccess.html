@@ -1,0 +1,39 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script type="text/JavaScript">
+     
+            function AutoRefresh(  ) {
+              var myVar = document.getElementById("myVar").value;
+               jQuery.ajax(
+         {
+            'type': 'POST',
+            'url': 'successful',
+            'contentType': 'application/json',
+            'dataType': 'text',
+            'data': {
+               "problem":myVar,
+             },
+            
+             'success': function(data){
+              x=JSON.parse(data)["dicti"]
+              var z=""
+              for(var key in x)
+              {
+                z+=x[key]+"<br />"
+              }
+              document.getElementById("abc").innerHTML = z;
+             }
+    }
+);
+            }
+          setInterval('AutoRefresh()',5000);
+         
+      </script>
+<body>
+<div id="a">0</div>
+<input type="hidden" id="myVar" name="variable" value="{{ problem_name }}">
+<div id="abc">
+<pre>{{value}}</pre>
+</div>
+<div id="c"></div>
+</body>

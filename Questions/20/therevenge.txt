@@ -1,0 +1,45 @@
+Arpit loves binary digits while his friend Ishank hates them. One day Ishank was making fun of arpit, of which arpit became very angry. Arpit decided to challenge Ishank by asking him a question of his favourite topic - binary digits.
+
+Arpit gave Ishank a matrix of size N X M containing binary digits (0 and 1) . Ishank was asked to maximize the number of 1's in the matrix.He was also given the special power to choose a square sub-matrix of atleast 1 element and flip it completely. Flipping here means switching the state '0 to 1' or '1 to 0' of every element present in the chosen submatrix. Ishank has to use his power exactly once.
+
+Ishank seems to be completely clueless about the challenge and seeks your help.
+
+Input Format
+
+The first line contains two space separated integers 'N' (number of rows) and 'M' (number of columns)
+
+Then N lines follow, each containing M space separated integers. (Note: The last integer in each of these M lines may also be followed by a whitespace.)
+These N lines represent the matrix.
+
+Output Format
+
+Print the maximum number of 1's possible after using the special power.
+
+Contraints
+
+1 <= N,M <=500
+
+Sample Input
+3 3
+0 1 1
+0 0 1
+1 0 1
+
+Sample Output
+
+7
+
+Explanation
+
+Ishank chooses the following sub-matrix - >
+
+0 0
+1 0
+
+He then flips it.
+
+0 1 1
+1 1 1
+0 1 1
+
+The number of 1's is equal to 7.

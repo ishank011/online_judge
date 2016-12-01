@@ -1,0 +1,26 @@
+Uncle being the casanova he is , is spoilt for choices about whom to take for date for friday night.
+Uncle picks up a flower with petals and starts removing petals one by one and saying the names of the three girls {"Emma","Emilia","Scarlett"}.He will go on a date with the girl whose name was said last.
+Uncle is a big fan of Mandal and wants to kill the girl with his looks,so he is going to get ready for the date.
+Given value of ,you have to help Uncle by predicting who will be the (un)lucky girl tonight.
+
+Input Format
+N, the number of petals in the flower
+
+Constraints:
+N < 10000
+
+Output Format
+The name of the lucky girl:p
+
+
+Sample Input 0
+3
+
+Sample Output 0
+Scarlett
+
+Sample Input 1
+2
+
+Sample Output 1
+Emilia

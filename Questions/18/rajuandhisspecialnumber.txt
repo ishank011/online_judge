@@ -1,0 +1,33 @@
+Raju had a special number. But while he was busy playing counterstrike, the number was stolen from his room. His roommate Kedia came to his rescue.
+
+Kedia remembered that one day he and Raju were playing a game with Raju's number.They started by writing his number on paper. Taking turns they divided the number on paper with a prime number raised to a positive power provided the number was divisible by that power of prime and then replaced the number on paper by the new number obtained. The person who could not do this will lose. Raju was the first player. Kedia had observed that he would always beat Raju when both of them played optimally.
+
+Kedia has a number N and wants to give Raju his special number. He knows that on dividing N by a prime number's positive power (provided N is divisible by that power of prime number), he will be able to get Raju's number. Help Kedia find Raju's number.
+
+Note: In case of multiple answers, Raju's number is the smallest one. Note: In case there is no possible answer, print “Not Possible” without quotes.
+
+Input Format
+
+First line contains number of test cases T(≤ 10^3). Next T lines contain an integer N, the number that Kedia has.
+
+Constraints
+1<=T<=10^3
+1<=N<=10^12
+
+Output Format
+
+Output Raju's number Kedia will generate by dividing N by a power of prime. If no output is possible, print "Not Possible" without quotes.
+
+Sample Input
+
+2
+
+20
+
+10
+
+Sample Output
+
+10
+
+Not Possible

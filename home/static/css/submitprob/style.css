@@ -1,0 +1,125 @@
+#menu{
+    position: fixed;
+    background-color:  #fbfcfc ;
+    width: 150%;
+    margin-left:-10%;
+    top:0%;
+    height: 10%;
+    z-index:1;
+}
+
+
+#line{
+    position: fixed;
+    background-color: #39424E;
+    width: 150%;
+    height: 1%;
+    z-index=1;
+    margin-left:-10%;
+    top:10%;
+    padding: 0%;
+    box-shadow: 0  8px 16px 0 rgba(1,0,0,0.2), 0 6px 2px 0 rgba(0,0,0,0.19);
+
+}
+
+
+.button{
+    display: inline-block;
+    background-color: #008CBA; /* Green */
+    border: none;
+    color: white;
+    padding: 12px 26px;
+    width: 120px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.5s;
+    box-shadow: 0  8px 16px 0 rgba(1,0,0,0.2), 0 6px 2px 0 rgba(0,0,0,0.19);
+}
+
+.button span{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button span:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover span{
+    padding-right:25px;
+}
+
+.button span:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+#logout{
+    position:fixed;
+    right:1%;
+    top:2%;
+    padding:0%;
+}
+
+#hi{
+    position:fixed;
+    right: calc(2% + 120px);
+    top: 6%;
+    padding:0%;
+}
+
+#login{
+    position:fixed;
+    right:calc(2% + 120px);
+    top:2%;
+    padding:0%;
+}
+
+#signup{
+    position:fixed;
+    right:1%;
+    top:2%;
+    padding:0%;
+}
+
+#content{
+    position:absolute;
+    top:12%;
+}
+
+pre {
+ white-space: pre-wrap;       /* css-3 */
+ white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+ white-space: -pre-wrap;      /* Opera 4-6 */
+ white-space: -o-pre-wrap;    /* Opera 7 */
+ word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+
+#img1{
+    position:fixed;
+    left:0%;
+    top:2%;
+    padding:0%;
+    width:20%;
+    height:8%;
+    z-index:1;
+}

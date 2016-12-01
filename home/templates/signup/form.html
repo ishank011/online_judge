@@ -1,0 +1,121 @@
+<link rel="stylesheet" type="text/css" href="/static/css/signup/style.css">
+
+{% if user.username %}
+<div id="menu">
+    <img src="/static/images/judge.jpg" id="img1">
+    <div id="logout">
+        <a href="/logout"> <button class="button"><span>logout</span></button> </a>
+    </div>
+
+    <div id="hi">
+        Hi <a href="/profile/{{user.username}}">{{user.username}} </a>
+    </div>
+
+    <div id="line"></div>
+    </div>
+
+    <div class="wrapper1" id="wrapper1">
+
+
+        <div id="content1">
+            <div class="content2">
+
+            <br><hr>
+                <br>You are already logged in<br>
+
+                </div>
+        </div>
+
+
+        <hr>
+        <div id="footer"></div>
+
+
+
+    </div>
+
+{% endif %}
+
+{% if not user.username %}
+
+
+<div id="menu">
+    <img src="/static/images/judge.jpg" id="img1">
+    <div id="login">
+        <a href="/login"><button class="button"><span>login</span></button></a>
+
+    </div>
+
+    <div id="line"></div>
+    </div>
+
+<div class="wrapper2" id="wrapper2">
+
+
+        <div id="content3">
+            <div class="content4">
+            <br>Welcome ! Please sign up to continue<br>
+            <br><hr>
+            {% if error_message %}<p><strong>{{error_message}}</strong></p>{% endif %}
+            {% if messages %}
+            <div class="span12">
+            {% for message in messages %}
+                 <div class="alert alert-{{ message.tags }}">
+                    <b>*{{ message|safe }}</b>
+                    </div>
+            {% endfor %}
+            </div>
+            {% endif %}
+
+            <form action="{% url 'signup:signup_done' %}" method="POST" >
+                {% csrf_token %}
+                <br>
+                    <div class="label"><label>Username : </label></div><div class="input"><input type="text" name="username"></div><br>
+                    <br><div class="label"><label>First Name : </label></div><div class="input"><input type="text" name="first_name"></div><br>
+                    <br><div class="label"><label>Middle Name : </label></div><div class="input"><input type="text" name="middle_name"></div><br>
+                    <br><div class="label"><label>Last Name : </label></div><div class="input"><input type="text" name="last_name"></div><br>
+                    <br><div class="label"><label>Gender : </label></div>
+                    <div class="input"><select name="gender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select></div><br>
+                    <br><div class="label"><label>Date of Birth : </label></div><div class="input"><input type="text" name="dob" data- /></div><br>
+                    <br><div class="label"><label>Contact Number : </label></div><div class="input"><input type="text" name="contact_number"></div><br>
+                    <br><div class="label"><label>Email : </label></div><div class="input"><input type="email" name="email"></div><br>
+                    <br><div class="label"><label>Institute Name : </label></div><div class="input"><input type="text" name="institute"></div><br>
+                    <br><div class="label"><label>Year of joining institute : </label></div><div class="input"><input type="text" name="year_joined_institute"></div><br>
+                    <br><div class="label"><label>City : </label></div><div class="input"><input type="text" name="city"></div><br>
+                    <br><div class="label"><label>Country : </label></div><div class="input"><input type="text" name="country"></div><br>
+                    <br><div class="label"><label>T-Shirt Size : </label></div>
+                    <div class="input"><select name="tshirt_size">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="XXL">XXL</option>
+                    </select></div><br>
+
+                        <br><br><br><input type="submit" value="Submit">
+            </form>
+
+                <br><br><br><div class="er"><b>* Please login if you already have an account</b></div>
+                </div>
+        </div>
+
+
+        <hr>
+        <div id="footer">
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+{% endif %}

@@ -1,0 +1,75 @@
+
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="/static/css/practice/style.css" >
+
+
+
+{% if user.username %}
+
+
+<div id="menu">
+    <img src="/static/images/judge.jpg" id="img1">
+    <div id="logout">
+        <a href="/logout"> <button class="button"><span>logout</span></button> </a>
+    </div>
+
+    <div id="hi">
+        Hi <a href="/profile/{{user.username}}">{{user.username}} </a>
+    </div>
+
+    <div id="line"></div>
+    </div>
+
+<div class="wrapper1" id="wrapper1">
+    <div id="content">
+        <p>
+            <a href="/practice">Practice</a>  |
+            <a href="/contest">Compete</a>  |
+            <a href="/assignment">Assignments</a>
+            <br><br>
+
+
+            <div class="prob"><center><b>Problems</b></center></div>
+            <div class="sub"><center><b>Submissions</b></center></div>
+            <div class="correct"><center><b>Correct Submissions</b></center></div>
+        <br>
+{% for i in problems %}
+        <div class="Qbox">
+	        <div class="prob"><a href='/practice/{{i.problem_name}}'><div class="QuesName">{{i.problem_name}}</div></a></div>
+            <div class="sub">{{i.submissions}}</div>   <div class="correct"> {{i.correct}}</div>
+        </div>
+{% endfor %}
+        </p>
+    </div>
+
+    <div id="data" ><center>list <br> of<br>latest submissions <br> and <br> other <br> data <br>in this division</center></div>
+
+    </div>
+
+{% endif %}
+
+{% if not user.username %}
+
+<div id="menu">
+    <img src="/static/images/judge.jpg" id="img1">
+    <div id="signup">
+        <a href="/signup"> <button class="button"><span>signup</span></button></a>
+    </div>
+
+    <div id="login">
+        <a href="/login"><button class="button"><span>login</span></button></a>
+
+    </div>
+
+    <div id="line"></div>
+</div>
+
+    <div id="content"><p>Please login to view questions </p></div>
+
+
+{% endif %}
+
+
+
+

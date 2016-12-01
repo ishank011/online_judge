@@ -1,0 +1,68 @@
+Manu is a very sweet and innocent boy. He is very hard working and does regular study. But there is only one problem, he suffers from something known as "Examophobia", which is the fear of exams due to which he becomes very nervous and loses his self confidence (S). Now tommorow, he is having an exam. Although he has prepared for the test very well (like always), but due to his fear, he lost all his self confidence.
+Lal, being his roommate, wants to help him to do well in the exams. So he prepares a preliminary test for Manu. The test consists of total of N problems comprising of some easy and some of them being hard. There is a toughness level Ti associated with each problem. If the problem is easy, it increases his confidence by |Ti| (Ti>0) while hard ones decreases it by |Ti| (Ti<0).
+On seeing this situation, his best friend Ribhav comes into the rescue to help him and gave him a special power to reverse the toughness of the problem, which can be used at most once. By using this power, he can actually change the toughness of the problem from hard to easy and vice versa(i.e, he can negate the toughness level Ti of the problem). Note that he can use this special power on the problem before attempting it. If, at any level, his confidence becomes negative, he fails instantly.
+As he is quite intelligent, he will use the power provided by his best friend smartly. If he is able to face the test safely, print "He passes it!" (without quotes). Otherwise print the maximum level up to which he could reach (i.e. the level at which he failed).
+
+Note
+Manu starts the test with zero confidence (S=0).
+
+Input Format
+
+    The first line of the input contains a single integer, T, denoting the number of test cases.
+    For each test case, there are two lines.
+        The first line will contain a single integer, N, denoting the number of problems in the test.
+        The second line will contain N space-separated integers denoting the toughness of the problems (i.e. the ith integer will denote Ti).
+
+
+Output Format
+
+For each test case, print a single line denoting the answer to the problem.
+
+Constraints
+
+* 1 ≤ T ≤ 10^5
+
+* 1 ≤ n ≤ 10^5
+
+* −10^3 ≤ Ti ≤ 10^3
+
+* Sum of N over all the test cases will be less than or equal to 10^6.
+
+Sample Input
+
+3
+2
+-1 -2
+3
+1 -2 3
+4
+1 2 3 -7
+
+Sample Output
+
+2
+He passes it!
+He passes it!
+
+Explanation
+
+Test Case 1:
+
+    When he faces the first problem, his confidence will become negative, so in order not to fail, he has to apply the "reverse the toughness" power on the first problem. After applying this power, he will have confidence equal to 1.
+
+    Now he will go to the second problem, where his confidence will become -1 and he will fail at that level. So you need to print 2, denoting the level where he failed.
+
+Test Case 2:
+
+    When he faces the first problem, his confidence will become 1.
+
+    At the second level, his confidence will become -1 (1 - 2), so in order not to fail, he has to apply the "reverse the toughness" power on the second problem. After applying this power, he will have confidence equal to 3 (1 + 2).
+
+    Now he will go to the third level, his confidence will become 6, so he will pass the test safely.
+
+Test Case 3:
+
+    At 1, 2 and 3rd level, he faces the probem and his confidence increases to 6.
+
+    At the 4th level, he faces the tough problem and his confidence decreases to -1 (6 - 7), he then uses the power reverse the toughness on the 4th problem and his confidence increases to 13 (6 + 7).
+

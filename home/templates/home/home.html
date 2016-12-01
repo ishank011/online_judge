@@ -1,0 +1,132 @@
+
+<link rel="stylesheet" type="text/css" href="/static/css/home/home.css">
+
+
+
+{% if user.username %}
+
+
+<div id="menu">
+    <img src="/static/images/judge.jpg" id="img1">
+    <div id="logout">
+        <a href="/logout"> <button class="button"><span>logout</span></button> </a>
+    </div>
+
+    <div id="hi">
+        Hi <a href="/profile/{{user.username}}">{{user.username}} </a>
+    </div>
+
+    <div id="line"></div>
+    </div>
+
+
+    {% if not ista %}
+    {% if not isteacher %}
+    <div class="wrapper1" id="wrapper1">
+
+
+        <div id="content1">
+
+
+            <a  href="/practice"><div class="boxlink" id="prac"> <div class="cover" id="pracover"> Practice </div> </div></a>
+            <a href="/contest"><div class="boxlink" id="comp"><div class="cover" id="compcover">Compete</div></div></a>
+            <a href="/assignment"><div class="boxlink" id="asn"><div class="cover" id="asncover">Assignments</div> </div></a>
+        </div>
+
+        <div id="content2">
+
+
+        </div>
+
+        <div id="content3">
+
+
+        </div>
+
+        <div id="content4">
+
+
+        </div>
+
+        <div id="content5">
+
+
+        </div>
+
+        <div id="quote">
+        " If you control the code, you control the world. "
+        </div>
+        {% if user.is_superuser %}
+            <a href="/add/teacher">Add teacher</a>
+
+        {%endif%}
+        <hr>
+        <div id="footer">
+
+
+        </div>
+
+
+
+    </div>
+    {% endif %}
+
+    {% endif %}
+
+    {% if isteacher %}
+    <div class="wrapper2" id="wrapper2">
+
+
+        <div id="content6">
+
+
+            <a  href="/addassigment"><div class="boxlink" id="prac"> <div class="cover" id="pracover"> Add Assignment for a course</div> </div></a>
+
+            <a href="/registercourse"><div class="boxlink" id="comp"><div class="cover" id="compcover">Register yourself as teacher/TA of a course</div></div></a>
+
+            {% if isteacher %}
+            <a href="/add/ta"><div class="boxlink" id="asn"><div class="cover" id="asncover">Add TA for a course</div> </div></a>
+            {% endif %}
+        </div>
+        <div id="quote1">
+        " If you control the code, you control the world. "
+        </div>
+
+        <hr>
+        <div id="footer1">
+
+
+        </div>
+
+
+
+    </div>
+
+    {% endif %}
+
+
+
+{% endif %}
+
+{% if not user.username %}
+
+<div id="menu">
+    <img src="/static/images/judge.jpg" id="img1">
+    <div id="signup">
+        <a href="/signup"> <button class="button"><span>signup</span></button></a>
+    </div>
+
+    <div id="login">
+        <a href="/login"><button class="button"><span>login</span></button></a>
+
+    </div>
+
+    <div id="line"></div>
+    </div>
+
+
+
+
+{% endif %}
+
+

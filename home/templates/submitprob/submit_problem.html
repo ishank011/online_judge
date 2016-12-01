@@ -1,0 +1,8 @@
+<form action="{% url 'submitprob:success' %}" method="POST" enctype="multipart/form-data" >
+	{% csrf_token %}
+	{{form}}
+	<br>
+	<input type="submit" value="Submit">
+</form>
+
+

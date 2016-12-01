@@ -1,0 +1,67 @@
+
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="/static/css/assignment/style.css">
+
+
+
+{% if user.username %}
+
+
+<div id="menu">
+    <img src="/static/images/judge.jpg" id="img1">
+    <div id="logout">
+        <a href="/logout"> <button class="button"><span>logout</span></button> </a>
+    </div>
+
+    <div id="hi">
+        Hi <a href="/profile/{{user.username}}">{{user.username}} </a>
+    </div>
+
+    <div id="line"></div>
+
+    </div>
+
+    <div class="wrapper1" id="wrapper1">
+    <div id="content">
+        <p>
+            <a href="/practice">Practice</a>  |
+            <a href="/contest">Compete</a>  |
+            <a href="/assignment">Assignments</a>
+            <br><br>list of assignments
+        </p>
+
+
+
+    </div>
+
+    <div id="data" ><center>list <br> of<br>latest submissions <br> and <br> other <br> data <br>in this division</center></div>
+
+    </div>
+
+{% endif %}
+
+{% if not user.username %}
+
+<div id="menu">
+    <img src="/static/images/judge.jpg" id="img1">
+    <div id="signup">
+        <a href="/signup"> <button class="button"><span>signup</span></button></a>
+    </div>
+
+    <div id="login">
+        <a href="/login"><button class="button"><span>login</span></button></a>
+
+    </div>
+
+    <div id="line"></div>
+    </div>
+
+    <div id="content"><p>Please login to view assignments </p></div>
+
+
+{% endif %}
+
+
+
+

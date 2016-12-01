@@ -1,0 +1,45 @@
+{% if user.username %}
+{% if user.is_superuser %}
+    Add Teacher: <br>
+    <form action="{% url 'addteacherdone' %}" method="POST">
+        {% csrf_token %}
+        <label>Username :   </label><input type="text" name="username" id="username"><br>
+        {% if error_message %}<p><strong>{{error_message}}</strong></p>{% endif %}
+            {% if messages %}
+            <div class="span12">
+            {% for message in messages %}
+                 <div class="alert alert-{{ message.tags }}">
+                    <b>* {{ message|safe }}</b>
+                    </div>
+            {% endfor %}
+            </div>
+            {% endif %}
+        <input type="submit" value="Submit">
+
+    </form>
+
+{%endif%}
+{%endif%}
+
+
+
+{% if not user.username %}
+
+<div id="menu">
+    <img src="/static/images/judge.jpg" id="img1">
+    <div id="signup">
+        <a href="/signup"> <button class="button"><span>signup</span></button></a>
+    </div>
+
+    <div id="login">
+        <a href="/login"><button class="button"><span>login</span></button></a>
+
+    </div>
+
+    <div id="line"></div>
+    </div>
+
+
+
+
+{% endif %}

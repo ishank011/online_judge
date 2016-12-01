@@ -1,0 +1,66 @@
+Yash is a strong believer of justice.
+
+He has two nephews: Abhiroop and Alok.
+
+He went to the market to buy candy bags as gifts for his nephews. He brings two types of bags:
+  1. Containing 'a' candies and Abhiroop written on them
+  2. Containing 'b' candies and Alok written on them
+
+After coming back, he realizes that he has 'N' bags of type 1 and 'M' bags of type 2.
+He can gift a bag to a nephew if only if his name is written on it.
+
+Now, since he is a strong believer of justice he wants that the number of candies received by both his nephews is equal.
+
+Determine if there is a way he can gift his nephews a non-zero number of candy bags such that the above said conditions are satisfied.
+
+Note: It is guaranteed that when he gifts either of his two nephews, he gifts a complete bag of candies.
+      Also, he need not gift all candy bags, if required he may have to keep a few with himself.
+
+Input format:
+
+The first line contains two space-separated positive integers 'a' and 'b': the number of candies in the two types of bags.
+The second line contains two space-separated positive integers 'N' and 'M': the number of candy bags of each type Yash has.
+
+Output format:
+
+A single line containing "Yes" (without quotes) if he can make a valid allotment of candy bags, otherwise "No" (without quotes) if he cannot.
+
+Sample Input 1:
+
+6 8
+10 10
+
+Sample Output 1:
+
+Yes
+
+Explanation:
+
+He can allot 8 candy bags to Abhiroop and 6 candy bags to Alok.
+
+Sample Input 2:
+
+9 3
+6 6
+
+Sample Output 2:
+
+Yes
+
+Explanation:
+
+He can allot 2 candy bags to Abhiroop and 6 candy bags to Alok.
+
+Sample Input 3:
+
+6 7
+5 5
+
+Sample Output 3:
+
+No
+
+Explanation:
+
+He cannot make any allotment such that Abhiroop and Alok get equal candies.
+

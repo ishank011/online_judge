@@ -1,0 +1,93 @@
+<link rel="stylesheet" type="text/css" href="/static/css/login/style.css">
+
+{% if user.username %}
+<div id="menu">
+    <img src="/static/images/judge.jpg" id="img1">
+    <div id="logout">
+        <a href="/logout"> <button class="button"><span>logout</span></button> </a>
+    </div>
+
+    <div id="hi">
+        Hi <a href="/profile/{{user.username}}">{{user.username}} </a>
+    </div>
+
+    <div id="line"></div>
+    </div>
+
+    <div class="wrapper1" id="wrapper1">
+
+
+        <div id="content1">
+            <div class="content2">
+
+            <br><hr>
+                <br>You are already logged in<br>
+                <br>Please logout to login from a different account<br>
+                </div>
+        </div>
+
+
+        <hr>
+        <div id="footer"></div>
+
+
+
+    </div>
+
+{% endif %}
+
+{% if not user.username %}
+
+<div id="menu">
+    <img src="/static/images/judge.jpg" id="img1">
+    <div id="signup">
+        <a href="/signup"> <button class="button"><span>signup</span></button></a>
+    </div>
+
+    <div id="line"></div>
+    </div>
+
+<div class="wrapper1" id="wrapper1">
+
+
+        <div id="content1">
+            <div class="content2">
+            <br>Welcome ! Please login to continue
+            <br><br><hr>
+            {% if error_message %}<p><strong>{{error_message}}</strong></p>{% endif %}
+            {% if messages %}
+            <div class="span12">
+            {% for message in messages %}
+                 <div class="alert alert-{{ message.tags }}">
+                    <b>* {{ message|safe }}</b>
+                    </div>
+            {% endfor %}
+            </div>
+            {% endif %}
+
+            <form action="{% url 'login:login_done' %}" method="POST" >
+            {% csrf_token %}
+            <br>
+
+            <div class="label"><label>Username :   </label></div><div class="input"><input type="text" name="username" id="username"></div><br>
+            <br><div class="label"><label>Password :   </label></div><div class="input"><input type="password" name="password"></div><br>
+
+            <br><br><input type="submit" value="Submit">
+        </form><br>
+
+                <div class="er"><b>* Please sign up if you do not have an account</b></div>
+                </div>
+        </div>
+
+
+        <hr>
+        <div id="footer">
+
+
+        </div>
+
+
+
+    </div>
+
+{% endif %}

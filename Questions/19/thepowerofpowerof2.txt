@@ -1,0 +1,42 @@
+Busy Pranav!:
+Pranav is a very busy (and awesome) man! He has N jobs that he needs to complete. He also knows the strength that he will gain by completing each job. If strength is negative, then his strength will decrease. He wants to select a contiguous subarray of jobs such that the total strength gained by him is a power of 2.
+Every day he wakes up and asks his roommate, Prateek to give him two numbers ,l and r, lying between 1 and N such that this subarray is of the form that Pranav wants .
+So, Prateek wants to know how many contiguous subarrays between l and r will be there such that the strength gained by completing all the jobs in that contiguous subarray is a power of 2 . Help Prateek find this!!
+
+Input Format
+
+First line will contain N, the number of the jobs.
+Second line will contain N integers, strength gained/lost by completing each job.
+Third line will contain Q integers.denoting the number of queries.
+The next Q Lines each will contain 1 query [L,R] .
+
+Constraints:
+
+1<=N<=50000
+-10^12<=strength of the job<=10^12
+1<=Q<=50000
+1<=L<=R<=N
+
+It is guaranteed that the total strength considering any range doesn't require more than a 64-bit integer.
+
+Output Format
+
+Q lines containing answers for each query.
+
+Sample Input
+
+5
+1 4 4 4 4
+2
+1 5
+1 3
+
+Sample Output
+
+9
+4
+
+Explanation
+
+The contiguous subsequences where total strength gained takes the form 2^i are:
+[1,1],[2,2],[2,3],[2,5],[3,3],[3,4],[4,4],[4,5],[5,5]	 

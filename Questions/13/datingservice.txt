@@ -1,0 +1,34 @@
+Thornhill dating services maintains a likeness factor for all its clients. This factor is calculated on the basis of likes, dislikes, interests etc. The dating service sets up dates among its clients on regular intervals. The compatibility of a particular date is calculated as the bitwise XOR of the likeness factor of the two clients.
+The dating service has N male and N female clients. Dates are to be scheduled in such a way that every client gets a date with another client of the opposite gender and no client is left without a date. The dating service wants to set up dates in such a way that the sum of compatibilities of all the dates is maximized. Given the likeness factor for these N male and N female clients, find the maximum sum of compatibilities that can be obtained.
+
+Input Format
+
+The first line contains an integer N containing the number of clients of each gender.
+The second line contains N integers denoting the likeness factor Mi for each of the male clients.
+The third line contains N integers denoting the likeness factor Fi for each of the female clients.
+
+Constraints:
+
+1<=N<=500
+1<=Mi,Fi<=10^6
+
+Output Format
+
+Output a single integer denoting the maximum sum of compatibilities as described in the problem statement.
+
+Sample Input
+
+3
+5 7 12
+3 6 13
+
+Sample Output
+
+28
+
+Explanation
+
+The 1st male client can be paired with 2nd female client, the 2nd male client can be paired with 3rd female client and the 3rd male client can be paired with 1st female client giving sum of compatibilities as 
+(5^6)+(7^13)+(12^3)
+ The symbol ^ denotes the bitwise XOR operation.
+You can easily verify that this is the maximum value that can be obtained 
