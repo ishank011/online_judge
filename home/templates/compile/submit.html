@@ -1,28 +1,89 @@
-<h1> Question Name</h1>
+{% load staticfiles %}
 
-{% if messages %}
-<div class="span12">
-{% for message in messages %}
-    <div class="alert alert-{{ message.tags }}">
-        {{ message|safe }}
+<link rel="stylesheet" type="text/css" href="/static/css/assignment/style.css">
+
+
+
+{% if user.username %}
+
+
+<div id="menu">
+    <img src="/static/images/judge.jpg" id="img1">
+    <div id="logout">
+        <a href="/logout"> <button class="button"><span>logout</span></button> </a>
     </div>
-{% endfor %}
-</div>
+
+    <div id="hi">
+        Hi hhhh<a href="/profile/{{user.username}}">{{user.username}} </a>
+    </div>
+
+    <div id="line"></div>
+
+    </div>
+
+    <div class="wrapper1" id="wrapper1">
+    <div id="content">
+        <p>
+            <h1> Question Name</h1>
+
+				{% if messages %}
+				<div class="span12">
+				{% for message in messages %}
+				    <div class="alert alert-{{ message.tags }}">
+				        {{ message|safe }}
+				    </div>
+				{% endfor %}
+				</div>
+				{% endif %}
+
+				<br>
+
+				<form action="/compile/submit" method="POST" enctype="multipart/form-data">
+					{% csrf_token %}
+					<select name="language">
+						<option value="c">C</option>
+						<option value="cpp">C++</option>
+						<option value="java">Java</option>
+						<option value="python">Python</option>
+					</select>
+					<br />
+					<input type="file" name="file">
+					<textarea id="code" type="text" maxlength="100000000000" name="code" cols="10" rows="5000000" style="width:200px; height:50px;"></textarea>
+					<br />
+					<input id="submit" value="submit" type="submit" >
+				</form>
+
+
+        </p>
+
+
+
+    </div>
+
+    <div id="data" ><center>list <br> of<br>latest submissions <br> and <br> other <br> data <br>in this division</center></div>
+
+    </div>
+
 {% endif %}
 
-<br>
 
-<form action="/compile/submit" method="POST" enctype="multipart/form-data">
-	{% csrf_token %}
-	<select name="language">
-		<option value="c">C</option>
-		<option value="cpp">C++</option>
-		<option value="java">Java</option>
-		<option value="python">Python</option>
-	</select>
-	<br />
-	<input type="file" name="file">
-	<textarea id="code" type="text" maxlength="100000000000" name="code" cols="10" rows="5000000" style="width:200px; height:50px;"></textarea>
-	<br />
-	<input id="submit" value="submit" type="submit" >
-</form>
+{% if not user.username %}
+
+<div id="menu">
+    <img src="/static/images/judge.jpg" id="img1">
+    <div id="signup">
+        <a href="/signup"> <button class="button"><span>signup</span></button></a>
+    </div>
+
+    <div id="login">
+        <a href="/login"><button class="button"><span>login</span></button></a>
+
+    </div>
+
+    <div id="line"></div>
+    </div>
+
+    <div id="content"><p>Please login to view this question </p></div>
+
+
+{% endif %}
