@@ -62,8 +62,17 @@ def worker(username,name,language,value):
 			file1.close()
 			subprocess.call('rm ' + complete_path + 'code.txt' , shell=True)
 			if value !="":
+				print(1)
 				ob.compile_error+=1
 				ob.save()
+				count = 0
+				for i in os.listdir('Questions/'+str(ob.problem_id)+'/input'):
+					count += 1
+				i=0
+				while i < count:
+					file1=open(complete_path+"final" + str(i) + ".txt","w")
+					file1.write("Compilation Error\n")
+					i += 1
 			elif value == "":
 				value = "compiled"
 				count = 0
@@ -76,7 +85,7 @@ def worker(username,name,language,value):
 					v=file1.read()
 					file1.close()
 					if ret==124 and v=='':
-						file1=open(complete_path+'error'+str(i)+'.txt','w')
+						file1=open(complete_path+'error'+str(i)+'.txt',"w")
 						file1.write('TLE')
 						file1.close()
 					fileError = open(complete_path+"error" + str(i) + ".txt")
@@ -90,17 +99,17 @@ def worker(username,name,language,value):
 						val1=[s.strip() for s in value1.splitlines()]
 						val2=[s.strip() for s in value2.splitlines()]
 						subprocess.call('rm '+complete_path+'output' + str(i) + '.txt' , shell=True)
-						file1=open(complete_path+"final" + str(i) + ".txt",'w')
+						file1=open(complete_path+"final" + str(i) + ".txt","w")
 						file2.close()
 						if val1 != val2:
 							file1.write("wrong answer in test case " + str(i) +"\n")
 						else:
 							file1.write("correct answer in test case " + str(i) +"\n")
 					elif valError == "TLE":
-						file1=open(complete_path+"final" + str(i) + ".txt",'w')
+						file1=open(complete_path+"final" + str(i) + ".txt","w")
 						file1.write("Time limit exceeded in test case " + str(i) +"\n")
 					else:
-						file1=open(complete_path+"final" + str(i) + ".txt",'w')
+						file1=open(complete_path+"final" + str(i) + ".txt","w")
 						file1.write("Segmentation fault in test case " + str(i) +"\n")
 				#subprocess.call('rm '+complete_path+'output' + str(i) + '.txt' , shell=True)
 					subprocess.call('rm '+complete_path+'error' + str(i) + '.txt' , shell=True)
@@ -116,9 +125,17 @@ def worker(username,name,language,value):
 			value = file1.read()
 			file1.close()
 			subprocess.call('rm ' + complete_path + 'code.txt' , shell=True)
-			if value != "":
-				ob.compile_error += 1
+			if value !="":
+				ob.compile_error+=1
 				ob.save()
+				count = 0
+				for i in os.listdir('Questions/'+str(ob.problem_id)+'/input'):
+					count += 1
+				i=0
+				while i < count:
+					file1=open(complete_path+"final" + str(i) + ".txt","w")
+					file1.write("Compilation Error\n")
+					i += 1
 			elif value == "":
 				value = "compiled"
 				count = 0
@@ -131,7 +148,7 @@ def worker(username,name,language,value):
 					v=file1.read()
 					file1.close()
 					if ret==124 and v=='':
-						file1=open(complete_path+'error'+str(i)+'.txt','w')
+						file1=open(complete_path+'error'+str(i)+'.txt',"w")
 						file1.write('TLE')
 						file1.close()
 						fileError = open(complete_path+"error" + str(i) + ".txt")
@@ -145,17 +162,18 @@ def worker(username,name,language,value):
 						val1=[s.strip() for s in value1.splitlines()]
 						val2=[s.strip() for s in value2.splitlines()]
 						subprocess.call('rm '+complete_path+'output' + str(i) + '.txt' , shell=True)
-						file1=open(complete_path+"final" + str(i) + ".txt",'w')
+						file1=open(complete_path+"final" + str(i) + ".txt","w")
 						file2.close()
 						if val1 != val2:
 							file1.write("wrong answer in test case " + str(i) +"\n")
 						else:
 							file1.write("correct answer in test case " + str(i) +"\n")
 					elif valError == "TLE":
-						file1=open(complete_path+"final" + str(i) + ".txt",'w')
+						file1=open(complete_path+"final" + str(i) + ".txt","w")
 						file1.write("Time limit exceeded in test case " + str(i) +"\n")
+					
 					else:
-						file1=open(complete_path+"final" + str(i) + ".txt",'w')
+						file1=open(complete_path+"final" + str(i) + ".txt","w")
 						file1.write("Segmentation fault in test case " + str(i) +"\n")
 				#subprocess.call('rm '+complete_path+'output' + str(i) + '.txt' , shell=True)
 					subprocess.call('rm '+complete_path+'error' + str(i) + '.txt' , shell=True)
@@ -170,9 +188,17 @@ def worker(username,name,language,value):
 			value = file1.read()
 			file1.close()
 			subprocess.call('rm ' + complete_path + 'code.txt' , shell=True)
-			if value != "":
-				ob.compile_error += 1
+			if value !="":
+				ob.compile_error+=1
 				ob.save()
+				count = 0
+				for i in os.listdir('Questions/'+str(ob.problem_id)+'/input'):
+					count += 1
+				i=0
+				while i < count:
+					file1=open(complete_path+"final" + str(i) + ".txt","w")
+					file1.write("Compilation Error\n")
+					i += 1
 			elif value == "":
 				value = "compiled"
 				count = 0
@@ -185,7 +211,7 @@ def worker(username,name,language,value):
 					v=file1.read()
 					file1.close()
 					if ret==124 and v=='':
-						file1=open(complete_path+'error'+str(i)+'.txt','w')
+						file1=open(complete_path+'error'+str(i)+'.txt',"w")
 						file1.write('TLE')
 						file1.close()
 					fileError = open(complete_path+"error" + str(i) + ".txt")
@@ -199,17 +225,17 @@ def worker(username,name,language,value):
 						val1=[s.strip() for s in value1.splitlines()]
 						val2=[s.strip() for s in value2.splitlines()]
 						subprocess.call('rm '+complete_path+'output' + str(i) + '.txt' , shell=True)
-						file1=open(complete_path+"final" + str(i) + ".txt",'w')
+						file1=open(complete_path+"final" + str(i) + ".txt","w")
 						file2.close()
 						if val1 != val2:
 							file1.write("wrong answer in test case " + str(i) +"\n")
 						else:
 							file1.write("correct answer in test case " + str(i) +"\n")
 					elif valError == "TLE":
-						file1=open(complete_path+"final" + str(i) + ".txt",'w')
+						file1=open(complete_path+"final" + str(i) + ".txt","w")
 						file1.write("Time limit exceeded in test case " + str(i) +"\n")
 					else:
-						file1=open(complete_path+"final" + str(i) + ".txt",'w')
+						file1=open(complete_path+"final" + str(i) + ".txt","w")
 						file1.write("Segmentation fault in test case " + str(i) +"\n")
 				#subprocess.call('rm '+complete_path+'output' + str(i) + '.txt' , shell=True)
 					subprocess.call('rm '+complete_path+'error' + str(i) + '.txt' , shell=True)
@@ -229,9 +255,17 @@ def worker(username,name,language,value):
 			value = file1.read()
 			file1.close()
 			subprocess.call('rm ' + complete_path + 'code.txt' , shell=True)
-			if value != "":
-				ob.compile_error += 1
+			if value !="":
+				ob.compile_error+=1
 				ob.save()
+				count = 0
+				for i in os.listdir('Questions/'+str(ob.problem_id)+'/input'):
+					count += 1
+				i=0
+				while i < count:
+					file1=open(complete_path+"final" + str(i) + ".txt","w")
+					file1.write("Compilation Error\n")
+					i += 1
 			elif value == "":
 				value = "compiled"
 				count = 0
@@ -244,7 +278,7 @@ def worker(username,name,language,value):
 					v=file1.read()
 					file1.close()
 					if ret==124 and v=='':
-						file1=open(complete_path+'error'+str(i)+'.txt','w')
+						file1=open(complete_path+'error'+str(i)+'.txt',"w")
 						file1.write('TLE')
 						file1.close()
 					fileError = open(complete_path+"error" + str(i) + ".txt")
@@ -258,17 +292,18 @@ def worker(username,name,language,value):
 						val1=[s.strip() for s in value1.splitlines()]
 						val2=[s.strip() for s in value2.splitlines()]
 						subprocess.call('rm '+complete_path+'output' + str(i) + '.txt' , shell=True)
-						file1=open(complete_path+"final" + str(i) + ".txt",'w')
+						file1=open(complete_path+"final" + str(i) + ".txt","w")
 						file2.close()
 						if val1 != val2:
 							file1.write("wrong answer in test case " + str(i) +"\n")
 						else:
 							file1.write("correct answer in test case " + str(i) +"\n")
 					elif valError == "TLE":
-						file1=open(complete_path+"final" + str(i) + ".txt",'w')
+						file1=open(complete_path+"final" + str(i) + ".txt","w")
 						file1.write("Time limit exceeded in test case " + str(i) +"\n")
+
 					else:
-						file1=open(complete_path+"final" + str(i) + ".txt",'w')
+						file1=open(complete_path+"final" + str(i) + ".txt","w")
 						file1.write("Segmentation fault in test case " + str(i) +"\n")
 				#subprocess.call('rm '+complete_path+'output' + str(i) + '.txt' , shell=True)
 					subprocess.call('rm '+complete_path+'error' + str(i) + '.txt' , shell=True)
@@ -277,44 +312,7 @@ def worker(username,name,language,value):
 
 	subprocess.call('rm '+complete_path+'code' , shell=True)
 
-	if value == "compiled":
-		#value = "Submitted Successfully<br>"
-		i=0
-		c=0
-
-		while i<count:
-			fileError = open(complete_path+"error" + str(i) + ".txt")
-			valError = fileError.read()
-			if valError == '':
-				file1 = open(complete_path+"output" + str(i) + ".txt")
-				file2 = open("Questions/"+str(ob.problem_id)+"/output/output" + str(i) + ".txt")
-				value1 = file1.read()
-				value2 = file2.read()
-				file1.close()
-				val1=[s.strip() for s in value1.splitlines()]
-				val2=[s.strip() for s in value2.splitlines()]
-				subprocess.call('rm '+complete_path+'output' + str(i) + '.txt' , shell=True)
-				file1=open(complete_path+"final" + str(i) + ".txt",'w')
-				file2.close()
-				if val1 != val2:
-					file1.write("wrong answer in test case " + str(i) +"\n")
-				else:
-					c+=1
-					file1.write("correct answer in test case " + str(i) +"\n")
-			elif valError == "TLE":
-				file1=open(complete_path+"final" + str(i) + ".txt",'w')
-				file1.write("Time limit exceeded in test case " + str(i) +"\n")
-			else:
-				file1=open(complete_path+"final" + str(i) + ".txt",'w')
-				file1.write("Segmentation fault in test case " + str(i) +"\n")
-			#subprocess.call('rm '+complete_path+'output' + str(i) + '.txt' , shell=True)
-			subprocess.call('rm '+complete_path+'error' + str(i) + '.txt' , shell=True)
-			i += 1
-			file1.close()
-
-		if(c==count):
-			ob.correct+=1
-			ob.save()
+	
 	#print("1")
 	#return HttpResponse(value)
 
@@ -333,30 +331,30 @@ def submitted(request):
 		value=request.POST.get('code',None)
 		if language == "cpp":
 			try:
-				file1=open(complete_path + "code" + str(ob.submissions) + ".cpp","w")
+				file1=open(complete_path + "code" + str(ob.submissions) + ".cpp","w+")
 			except:
 				subprocess.call('mkdir Submissions/' + str(ob.problem_id)+ "/" + username+'/'+str(ob.submissions), shell=True)
-				file1 = open(complete_path + "code" + str(ob.submissions) + ".cpp", "w")
+				file1 = open(complete_path + "code" + str(ob.submissions) + ".cpp", "w+")
 			file1.write(value)
 			file1.close()
 			
 
 		elif language == "c":
 			try:
-				file1 = open(complete_path + "code" + str(ob.submissions) + ".c", "w")
+				file1 = open(complete_path + "code" + str(ob.submissions) + ".c", "w+")
 			except:
 				subprocess.call('mkdir Submissions/' + str(ob.problem_id)+ "/" + username+'/'+str(ob.submissions), shell=True)
-				file1 = open(complete_path + "code" + str(ob.submissions) + ".c", "w")
+				file1 = open(complete_path + "code" + str(ob.submissions) + ".c", "w+")
 			file1.write(value)
 			file1.close()
 			
 
 		elif language == "python":
 			try:
-				file1 = open(complete_path + "code" + str(ob.submissions) + ".py", "w")
+				file1 = open(complete_path + "code" + str(ob.submissions) + ".py", "w+")
 			except:
 				subprocess.call('mkdir Submissions/' + str(ob.problem_id)+ "/" + username+'/'+str(ob.submissions), shell=True)
-				file1 = open(complete_path + "code" + str(ob.submissions) + ".py", "w")
+				file1 = open(complete_path + "code" + str(ob.submissions) + ".py", "w+")
 			file1.write(value)
 			file1.close()
 			
@@ -368,10 +366,10 @@ def submitted(request):
 			y=" ".join(x)
 
 			try:
-				file1 = open(complete_path + x[j+1]+".java", "w")
+				file1 = open(complete_path + x[j+1]+".java", "w+")
 			except:
 				subprocess.call('mkdir Submissions/' + str(ob.problem_id)+ "/" + username+'/'+str(ob.submissions), shell=True)
-				file1 = open(complete_path + x[j + 1] + ".java", "w")
+				file1 = open(complete_path + x[j + 1] + ".java", "w+")
 			file1.write(y)
 			file1.close()
 		
@@ -426,10 +424,10 @@ def submitted(request):
 					break;
 			" ".join(y)
 			try:
-				file1 = open(complete_path + x[j + 1] + ".java", "w")
+				file1 = open(complete_path + x[j + 1] + ".java", "w+")
 			except:
 				subprocess.call('mkdir Submissions/' + str(ob.problem_id)+ "/" + username+'/'+str(ob.submissions), shell=True)
-				file1 = open(complete_path + x[j + 1] + ".java", "w")
+				file1 = open(complete_path + x[j + 1] + ".java", "w+")
 			file1.write(y)
 			value=y
 			file1.close()
@@ -444,7 +442,7 @@ def submitted(request):
 	i=0
 	value=""
 	while i<count:
-		file1=open(complete_path+"final" + str(i) + ".txt",'w')
+		file1=open(complete_path+"final" + str(i) + ".txt","w+")
 		file1.write("Running on test case "+str(i)+"\n")
 		file1.close()
 		value+="Running on test case "+str(i)+"\n"
