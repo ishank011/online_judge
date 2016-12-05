@@ -82,7 +82,7 @@ def worker(username,name,language,value):
 					count += 1
 				i = 0
 				while i < count:
-					ret=subprocess.call('timeout 2s ./'+complete_path+'code < '+BASE_DIR +'/Questions/'+str(ob.problem_id)+'/input/input' + str(i) + '.txt' + ' > '+complete_path+'output' + str(i) + '.txt'+' 2> '+ complete_path+'error'+str(i)+'.txt', shell=True)
+					ret=subprocess.call('timeout 2s '+complete_path+'code < '+BASE_DIR +'/Questions/'+str(ob.problem_id)+'/input/input' + str(i) + '.txt' + ' > '+complete_path+'output' + str(i) + '.txt'+' 2> '+ complete_path+'error'+str(i)+'.txt', shell=True)
 					file1=open(complete_path+'error'+str(i)+'.txt','r')
 					v=file1.read()
 					file1.close()
@@ -145,7 +145,7 @@ def worker(username,name,language,value):
 					count += 1
 				i=0
 				while i<count:
-					ret=subprocess.call('timeout 2s ./'+complete_path+'code < '+BASE_DIR +'/Questions/'+str(ob.problem_id)+'/input/input' + str(i) + '.txt' + ' > '+complete_path+'output' + str(i) + '.txt'+' 2> '+ complete_path+'error'+str(i)+'.txt', shell=True)
+					ret=subprocess.call('timeout 2s '+complete_path+'code < '+BASE_DIR +'/Questions/'+str(ob.problem_id)+'/input/input' + str(i) + '.txt' + ' > '+complete_path+'output' + str(i) + '.txt'+' 2> '+ complete_path+'error'+str(i)+'.txt', shell=True)
 					file1=open(complete_path+'error'+str(i)+'.txt','r')
 					v=file1.read()
 					file1.close()
@@ -153,7 +153,7 @@ def worker(username,name,language,value):
 						file1=open(complete_path+'error'+str(i)+'.txt',"w")
 						file1.write('TLE')
 						file1.close()
-						fileError = open(complete_path+"error" + str(i) + ".txt")
+					fileError = open(complete_path+"error" + str(i) + ".txt")
 					valError = fileError.read()
 					if valError == '':
 						file1 = open(complete_path+"output" + str(i) + ".txt")
